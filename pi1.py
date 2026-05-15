@@ -49,18 +49,24 @@ def result(N,K):
 		lista.append(listinit)
 	return lista
 
-N = int(sys.argv[1])
-K = int(sys.argv[2])
-risultato=result(N,K)
-print(risultato)
+if __name__ == "__main__" :
+	if len(sys.argv)<3:
+		print("Dammi due numeri")
+	else:
+		N = int(sys.argv[1])
+		K = int(sys.argv[2])
+		risultato=result(N,K)
+		print(risultato)
 
-x = []
-y = []
-for i in range(len(risultato)):
-	x.append(i + 1)              
-	y.append(risultato[i][1])    
-plottalo.loglog(x, y)
-plottalo.xlabel("N")
-plottalo.ylabel("Deviazione standard")
-plottalo.title("Deviazione standard vs N")
-plottalo.show()
+		x = []
+		y = []
+		for i in range(len(risultato)):
+        		x.append(i + 1)
+        		y.append(risultato[i][1])
+		plottalo.loglog(x, y)
+		plottalo.xlabel("N")
+		plottalo.ylabel("Deviazione standard")
+		plottalo.title("Deviazione standard vs N")
+		plottalo.show()
+
+
